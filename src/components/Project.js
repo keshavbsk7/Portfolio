@@ -22,32 +22,30 @@ import TrackVisibility from 'react-on-screen';
 export const Projects = () => {
   const projects = [
     {
-      title: "Hotel Management",
-      description: "",
+      title: "Billing Application for Vegetable Shop",
+      description: "Developed a full-stack billing application to manage sales, inventory, and daily profit tracking using C#, ASP.NET and Angular.",
       imgUrl: projImg1,
     },
     {
       title: "Tamil Handwritten to Audio",
-      description: "",
+      description: "Engineered a CNN-based Tamil character recognition system combined with gTTS for text-to-speech conversion.",
       imgUrl: projImg2,
     },
     {
       title: "Book Recommendation System",
-      description: "",
+      description: "Built a personalised book recommendation engine using cosine similarity on genre vectors.",
       imgUrl: projImg3,
     },
     {
       title: "Next Word Prediction Using LSTM",
-      description: "",
+      description: "Developed a text prediction system using Long Short-Term Memory (LSTM) networks trained on book corpora.",
       imgUrl: projImg4,
     },
     {
       title: "Real-Time Face Recognition Attendance System",
-      description: "",
+      description: "Built a real-time face recognition and attendance tracking system using Python, OpenCV, and the face_recognition library.",
       imgUrl: projImg5,
     }
-
-
   ];
 
   const certificates = [

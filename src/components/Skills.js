@@ -1,31 +1,29 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-
 import colorSharp from "../assets/img/color-sharp.png"
+import { TiltTracker } from './TiltTracker';
 
 export const Skills = () => {
-  const responsive = {
-    superLargeDesktop: {
-     
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
+  const skillsData = [
+    {
+      title: "Frontend & Web",
+      icon: "💻",
+      skills: ["React", "HTML5", "CSS3", "JavaScript", "TypeScript", "Bootstrap", "Tailwind"],
     },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3
+    {
+      title: "Backend & APIs",
+      icon: "⚙️",
+      skills: ["Node.js", "Express", "RESTful APIs", "Python", "Java", "C#"],
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
+    {
+      title: "Databases",
+      icon: "🗄️",
+      skills: ["MongoDB", "PostgreSQL", "MySQL", "SQL Server", "Firebase"],
     },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
+    {
+      title: "Tools & Others",
+      icon: "🛠️",
+      skills: ["Git", "Docker", "AWS", "Machine Learning", "RPA", "Agile"],
     }
-  };
+  ];
 
   return (
     <section className="skill" id="skills">
@@ -33,41 +31,29 @@ export const Skills = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
+                        <h2>Skills & Technologies</h2>
+                        <p>I thrive on turning complex problems into elegant, beautiful, and intuitive designs using the modern tech stack below.</p>
                         
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            <div className="item">
-                                <img src={meter1} alt="Ima" />
-                                <h5>DSA</h5>
-                            </div>
-                            
-                            <div className="item">
-                                <img src={meter1} alt="Ima" />
-                                <h5>Python</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="Ima" />
-                                <h5>C and C++</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="Ima" />
-                                <h5>Problem Solving</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="Ima" />
-                                <h5>MySQL</h5>
-                            </div>
-                      
-                            <div className="item">
-                                <img src={meter3} alt="Ima" />
-                                <h5>Web Development</h5>
-                            </div>
-                        </Carousel>
+                        <div className="skills-grid">
+                          {skillsData.map((category, index) => (
+                            <TiltTracker className="skill-card" key={index}>
+                              <div className="skill-card-header">
+                                <span className="skill-icon">{category.icon}</span>
+                                <h3>{category.title}</h3>
+                              </div>
+                              <div className="skill-badges">
+                                {category.skills.map((skill, idx) => (
+                                  <span className="skill-badge" key={idx}>{skill}</span>
+                                ))}
+                              </div>
+                            </TiltTracker>
+                          ))}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="Ima" />
+        <img className="background-image-left" src={colorSharp} alt="Background" />
     </section>
   )
 }
